@@ -13,10 +13,22 @@ export interface Role {
 
 export const Jobs: Role[] = [
   {
+    title: 'Surely + Work',
+    start: 2024,
+    locked: false,
+    current: true,
+    description:
+      'Owning development for a gig economy job and networking platform.',
+    url: 'https://surelywork.com/',
+    styles:
+      'hover:bg-[#A3FD3D] dark:hover:text-[#060402] font-semibold align-baseline',
+    role: 'Lead Software Engineer',
+  },
+  {
     title: 'Booz Allen Hamilton',
     start: 2023,
     description:
-      'Developing a data analysis platform to simplify complex datasets into manageable, manipulative, and usable visualizations for government clients.',
+      "Developing a data analysis platform to simplify complex datasets into manageable, manipulative, and usable visualizations for government clients. I'm also working within the Chief Digital AI Office to help modernize internal applications and services.",
     url: 'https://boozallen.com/',
     locked: false,
     current: true,
@@ -52,24 +64,12 @@ export const Projects: Role[] = [
   {
     title: 'Lunchbox Studio',
     description:
-      "Where I'll optimistically say that I'm creating something in my free time.",
+      'Building some fun things for myself, exploring various technologies, and seeing what products I can create.',
     url: 'https://lunchbox.studio',
     start: 2025,
     locked: false,
     current: false,
     styles: 'hover:bg-[#007d46] hover:text-white font-semibold align-baseline',
     role: 'Founder',
-  },
-  {
-    title: 'Surely + Work',
-    start: 2024,
-    end: 2025,
-    locked: false,
-    current: true,
-    description: 'Leading development for a freelance gig economy platform.',
-    url: 'https://surelywork.com/',
-    styles:
-      'hover:bg-[#A3FD3D] dark:hover:text-[#060402] font-semibold align-baseline',
-    role: 'Lead Software Engineer',
   },
 ];

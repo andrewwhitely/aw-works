@@ -63,6 +63,10 @@ export const Products: Product[] = [
     description: '35mm Point & Shoot, Carl Zeiss Tessar 35mm f/3.5 Lens',
   },
   {
+    name: 'Fujifilm X100VI',
+    category: 'photography',
+  },
+  {
     name: 'Visual Studio Code',
     category: 'software',
   },
