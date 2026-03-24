@@ -7,7 +7,7 @@
     "start": "next start",
     "cf:build": "opennextjs-cloudflare build",
     "cf:preview": "opennextjs-cloudflare preview",
-    "cf:deploy": "opennextjs-cloudflare build && wrangler pages deploy"
+    "cf:deploy": "opennextjs-cloudflare build && wrangler deploy"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
