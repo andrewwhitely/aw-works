@@ -36,11 +36,11 @@ export const Products: Product[] = [
     category: 'workspace',
   },
   {
-    name: 'Apple AirPods Pro',
+    name: 'Apple AirPods Pro 3',
     category: 'workspace',
   },
   {
-    name: 'iPhone 13 Pro Max',
+    name: 'iPhone 16 Pro Max',
     category: 'workspace',
     description: '256GB, Sierra Blue',
   },
@@ -71,11 +71,11 @@ export const Products: Product[] = [
     category: 'software',
   },
   {
-    name: 'iTerm 2',
+    name: 'Cursor',
     category: 'software',
   },
   {
-    name: 'Notion',
+    name: 'Claude',
     category: 'software',
   },
   {
@@ -89,13 +89,5 @@ export const Products: Product[] = [
   {
     name: 'ohmyzsh',
     category: 'software',
-  },
-  {
-    name: 'discord',
-    category: 'software',
-  },
-  {
-    name: 'Steam',
-    category: 'gaming',
   },
 ];

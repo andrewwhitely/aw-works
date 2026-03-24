@@ -1,14 +1,25 @@
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { GeistMono } from 'geist/font/mono';
-import { GeistSans } from 'geist/font/sans';
 import type { Metadata } from 'next';
-import Breadcrumbs from './components/Breadcrumbs';
-import Footer from './components/footer';
-import { Navbar } from './components/nav';
-import { ThemeProvider } from './components/theme-switch';
+import { Fraunces, Instrument_Sans, JetBrains_Mono } from 'next/font/google';
+import { Navbar } from './components/Navbar';
 import { metaData } from './config';
 import './global.css';
+
+const instrumentSans = Instrument_Sans({
+  subsets: ['latin'],
+  variable: '--font-instrument-sans',
+});
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  variable: '--font-fraunces',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains-mono',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(metaData.baseUrl),
@@ -54,7 +65,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className={cx(GeistSans.variable, GeistMono.variable)}>
+    <html
+      lang='en'
+      className={`${instrumentSans.variable} ${fraunces.variable} ${jetbrainsMono.variable}`}
+    >
       <head>
         <link
           rel='alternate'
@@ -75,22 +89,13 @@ export default function RootLayout({
           title='JSON Feed'
         />
       </head>
-      <body className='antialiased flex flex-col items-center justify-center mx-auto mt-2 lg:mt-8 mb-20 lg:mb-40'>
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
-          enableSystem
-          disableTransitionOnChange
-        >
-          <main className='flex-auto min-w-0 mt-2 md:mt-6 flex flex-col px-6 sm:px-4 md:px-0 max-w-[640px] w-full h-screen'>
-            <Navbar />
-            <Breadcrumbs />
-            {children}
-            <Footer />
-            <Analytics />
-            <SpeedInsights />
-          </main>
-        </ThemeProvider>
+      <body className='antialiased min-h-screen flex flex-col mx-auto'>
+        <main className='container mx-auto flex-1 min-w-0 mt-2 md:mt-6 flex flex-col px-6 sm:px-4 md:px-0 w-full'>
+          <Navbar />
+          {children}
+          <Analytics />
+          <SpeedInsights />
+        </main>
       </body>
     </html>
   );
