@@ -1,0 +1,8 @@
+name = "aw-works"
+compatibility_date = "2025-03-24"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".open-next/assets"
+
+[[kv_namespaces]]
+binding = "NEXT_CACHE_WORKERS_KV"
+id = "4b76ec441d0843db94eadfc3adaa8169"

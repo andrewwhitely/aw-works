@@ -4,18 +4,15 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const post = getPostBySlug(params.slug);
+interface Props {
+  params: Promise<{ slug: string }>;
+}
 
-  if (!post) {
-    return {
-      title: 'Post Not Found',
-    };
-  }
+export async function generateMetadata({ params }: Props) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+
+  if (!post) return { title: 'Post Not Found' };
 
   return {
     title: post.title,
@@ -23,23 +20,18 @@ export async function generateMetadata({
   };
 }
 
-export default function FieldNotesPost({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const post = getPostBySlug(params.slug);
-  const { prev, next } = getAdjacentPosts(params.slug);
+export default async function FieldNotesPost({ params }: Props) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+  const { prev, next } = getAdjacentPosts(slug);
 
-  if (!post) {
-    notFound();
-  }
+  if (!post) notFound();
 
   return (
     <article>
       <Link
-        href='/works'
-        className='text-xs text-[#bbbbbb] hover:text-[#666666] transition-colors mb-8 inline-block link link-wrapper hover-1'
+        href='/fieldnotes'
+        className='text-xs text-[#bbbbbb] hover:text-[#666666] transition-colors mb-8 block'
       >
         ← All Field Notes
       </Link>
