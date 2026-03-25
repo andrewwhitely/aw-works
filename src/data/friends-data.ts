@@ -7,22 +7,22 @@ export type Friend = {
 export const friends: Partial<Friend>[] = [
   {
     name: 'Brandon Clay',
-    description: 'Designer, producer, bot',
+    description: 'Designer',
     url: 'https://builtbyclay.com',
   },
   {
     name: 'Roman Denson',
-    description: 'Product designer, runner, barista',
+    description: 'Product Designer',
     url: 'https://roe.fyi',
   },
   {
     name: 'Trevon Wiggs',
-    description: 'Software engineer, founder, runner',
+    description: 'Software Engineer @ Snap',
     url: 'https://instagram.com/trwggs',
   },
   {
     name: 'Pari Gabriel',
-    description: 'Product designer, founder, dog dad',
+    description: 'Product Designer @ Bland',
     url: 'https://yeahivegottime.net',
   },
 ].sort((a, b) => a.name!.localeCompare(b.name!));

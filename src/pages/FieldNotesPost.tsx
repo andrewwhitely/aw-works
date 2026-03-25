@@ -1,3 +1,4 @@
+import { ScrollColorText } from '@/components/ScrollColorText';
 import { metaData } from '@/config';
 import {
   getAdjacentPosts,
@@ -35,11 +36,24 @@ export default function FieldNotesPost() {
       </Helmet>
       <Link
         to='/fieldnotes'
-        className='text-xs text-[#bbbbbb] hover:text-[#666666] transition-colors mb-8 inline-block link hover-1'
+        className='text-xs text-[#bbbbbb] hover:text-[#666666] transition-colors mb-4 inline-block link hover-1'
       >
         ← All Field Notes
       </Link>
-      <div className='flex flex-wrap items-center gap-x-2 gap-y-1 mb-8'>
+      {post.tags && post.tags.length > 0 && (
+        <div className='flex flex-wrap gap-2 mb-6'>
+          {post.tags.map((tag) => (
+            <Link
+              key={tag}
+              to={`/fieldnotes/tags/${tag}`}
+              className='text-xs text-[#999999] border border-[#e0e0e0] rounded px-2 py-0.5 uppercase'
+            >
+              #{tag}
+            </Link>
+          ))}
+        </div>
+      )}
+      <div className='flex flex-wrap items-center gap-x-2 gap-y-1 mb-4'>
         <span className='text-[#999999] text-sm'>
           {format(new Date(post.date), 'MMMM dd, yyyy')}
         </span>
@@ -59,45 +73,40 @@ export default function FieldNotesPost() {
           </>
         )} */}
       </div>
-      {post.tags && post.tags.length > 0 && (
-        <div className='flex items-center gap-3 mb-8'>
-          {post.tags.map((tag) => (
-            <Link
-              key={tag}
-              to={`/fieldnotes/tags/${tag}`}
-              className='text-xs text-[#999999] uppercase tracking-widest hover:text-[#111111] transition-colors'
-            >
-              {tag}
-            </Link>
-          ))}
-        </div>
-      )}
       <div className='prose prose-neutral max-w-none'>
         {PostComponent ? (
-          <PostComponent />
+          <PostComponent
+            components={{
+              p: (props: object) => <ScrollColorText {...props} />,
+              h2: (props: object) => <ScrollColorText as='h2' {...props} />,
+              h3: (props: object) => <ScrollColorText as='h3' {...props} />,
+            }}
+          />
         ) : (
           <p className='text-[#999999]'>Loading...</p>
         )}
       </div>
 
-      <div className='mt-12 flex justify-between border-t border-[#e0e0e0] pt-8'>
-        {prev && (
-          <Link
-            to={`/fieldnotes/${prev.slug}`}
-            className='text-sm text-[#666666] hover:text-[#111111] transition-colors'
-          >
-            ← {prev.title}
-          </Link>
-        )}
-        {next && (
-          <Link
-            to={`/fieldnotes/${next.slug}`}
-            className='text-sm text-[#666666] hover:text-[#111111] transition-colors ml-auto'
-          >
-            {next.title} →
-          </Link>
-        )}
-      </div>
+      {(prev || next) && (
+        <div className='mt-12 flex justify-between pt-8'>
+          {prev && (
+            <Link
+              to={`/fieldnotes/${prev.slug}`}
+              className='text-sm text-[#666666] hover:text-[#111111] transition-colors'
+            >
+              ← {prev.title}
+            </Link>
+          )}
+          {next && (
+            <Link
+              to={`/fieldnotes/${next.slug}`}
+              className='text-sm text-[#666666] hover:text-[#111111] transition-colors ml-auto'
+            >
+              {next.title} →
+            </Link>
+          )}
+        </div>
+      )}
     </article>
   );
 }

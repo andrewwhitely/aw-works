@@ -1,100 +1,198 @@
-import { Navbar } from "@/components/Navbar";
-import About from "@/pages/About";
-import Bookmarks from "@/pages/Bookmarks";
-import ErrorPage from "@/pages/ErrorPage";
-import Experience from "@/pages/Experience";
-import FieldNotes from "@/pages/FieldNotes";
-import FieldNotesPost from "@/pages/FieldNotesPost";
-import Friends from "@/pages/Friends";
-import Home from "@/pages/Home";
-import NotFound from "@/pages/NotFound";
-import Now from "@/pages/Now";
-import Photos from "@/pages/Photos";
-import TagDetail from "@/pages/TagDetail";
-import Tags from "@/pages/Tags";
-import Uses from "@/pages/Uses";
-import WorkDetail from "@/pages/WorkDetail";
-import Works from "@/pages/Works";
-import { HelmetProvider } from "react-helmet-async";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Footer from '@/components/Footer';
+import { LoadingScreen } from '@/components/LoadingScreen';
+import { Navbar } from '@/components/Navbar';
+import { PageTransition } from '@/components/PageTransition';
+import About from '@/pages/About';
+import Bookmarks from '@/pages/Bookmarks';
+import ErrorPage from '@/pages/ErrorPage';
+import Experience from '@/pages/Experience';
+import FieldNotes from '@/pages/FieldNotes';
+import FieldNotesPost from '@/pages/FieldNotesPost';
+import Friends from '@/pages/Friends';
+import Home from '@/pages/Home';
+import NotFound from '@/pages/NotFound';
+import Now from '@/pages/Now';
+import Photos from '@/pages/Photos';
+import TagDetail from '@/pages/TagDetail';
+import Tags from '@/pages/Tags';
+import Uses from '@/pages/Uses';
+import WorkDetail from '@/pages/WorkDetail';
+import Works from '@/pages/Works';
+import { AnimatePresence } from 'motion/react';
+import { useEffect, useState } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+
+function AnimatedRoutes() {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode='wait'>
+      <Routes location={location} key={location.pathname}>
+        <Route
+          path='/'
+          element={
+            <PageTransition>
+              <Home />
+            </PageTransition>
+          }
+          errorElement={<ErrorPage />}
+        />
+        <Route
+          path='/about'
+          element={
+            <PageTransition>
+              <About />
+            </PageTransition>
+          }
+          errorElement={<ErrorPage />}
+        />
+        <Route
+          path='/experience'
+          element={
+            <PageTransition>
+              <Experience />
+            </PageTransition>
+          }
+          errorElement={<ErrorPage />}
+        />
+        <Route
+          path='/works'
+          element={
+            <PageTransition>
+              <Works />
+            </PageTransition>
+          }
+          errorElement={<ErrorPage />}
+        />
+        <Route
+          path='/works/:slug'
+          element={
+            <PageTransition>
+              <WorkDetail />
+            </PageTransition>
+          }
+          errorElement={<ErrorPage />}
+        />
+        <Route
+          path='/fieldnotes'
+          element={
+            <PageTransition>
+              <FieldNotes />
+            </PageTransition>
+          }
+          errorElement={<ErrorPage />}
+        />
+        <Route
+          path='/fieldnotes/tags'
+          element={
+            <PageTransition>
+              <Tags />
+            </PageTransition>
+          }
+          errorElement={<ErrorPage />}
+        />
+        <Route
+          path='/fieldnotes/tags/:tag'
+          element={
+            <PageTransition>
+              <TagDetail />
+            </PageTransition>
+          }
+          errorElement={<ErrorPage />}
+        />
+        <Route
+          path='/fieldnotes/:slug'
+          element={
+            <PageTransition>
+              <FieldNotesPost />
+            </PageTransition>
+          }
+          errorElement={<ErrorPage />}
+        />
+        <Route
+          path='/friends'
+          element={
+            <PageTransition>
+              <Friends />
+            </PageTransition>
+          }
+          errorElement={<ErrorPage />}
+        />
+        <Route
+          path='/uses'
+          element={
+            <PageTransition>
+              <Uses />
+            </PageTransition>
+          }
+          errorElement={<ErrorPage />}
+        />
+        <Route
+          path='/now'
+          element={
+            <PageTransition>
+              <Now />
+            </PageTransition>
+          }
+          errorElement={<ErrorPage />}
+        />
+        <Route
+          path='/photos'
+          element={
+            <PageTransition>
+              <Photos />
+            </PageTransition>
+          }
+          errorElement={<ErrorPage />}
+        />
+        <Route
+          path='/bookmarks'
+          element={
+            <PageTransition>
+              <Bookmarks />
+            </PageTransition>
+          }
+          errorElement={<ErrorPage />}
+        />
+        <Route
+          path='/404'
+          element={
+            <PageTransition>
+              <NotFound />
+            </PageTransition>
+          }
+        />
+        <Route
+          path='*'
+          element={
+            <PageTransition>
+              <NotFound />
+            </PageTransition>
+          }
+        />
+      </Routes>
+    </AnimatePresence>
+  );
+}
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 900);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <HelmetProvider>
       <BrowserRouter>
-        <body className="antialiased min-h-screen flex flex-col mx-auto">
-          <main className="container mx-auto flex-1 min-w-0 mt-2 md:mt-6 flex flex-col px-6 sm:px-4 md:px-0 w-full pb-12">
+        <LoadingScreen visible={loading} />
+        <body className='antialiased min-h-screen flex flex-col mx-auto'>
+          <main className='container mx-auto flex-1 min-w-0 my-2 md:my-6 flex flex-col px-6 sm:px-4 md:px-0 w-full'>
             <Navbar />
-            <Routes>
-              <Route path="/" element={<Home />} errorElement={<ErrorPage />} />
-              <Route
-                path="/about"
-                element={<About />}
-                errorElement={<ErrorPage />}
-              />
-              <Route
-                path="/experience"
-                element={<Experience />}
-                errorElement={<ErrorPage />}
-              />
-              <Route
-                path="/works"
-                element={<Works />}
-                errorElement={<ErrorPage />}
-              />
-              <Route
-                path="/works/:slug"
-                element={<WorkDetail />}
-                errorElement={<ErrorPage />}
-              />
-              <Route
-                path="/fieldnotes"
-                element={<FieldNotes />}
-                errorElement={<ErrorPage />}
-              />
-              <Route
-                path="/fieldnotes/tags"
-                element={<Tags />}
-                errorElement={<ErrorPage />}
-              />
-              <Route
-                path="/fieldnotes/tags/:tag"
-                element={<TagDetail />}
-                errorElement={<ErrorPage />}
-              />
-              <Route
-                path="/fieldnotes/:slug"
-                element={<FieldNotesPost />}
-                errorElement={<ErrorPage />}
-              />
-              <Route
-                path="/friends"
-                element={<Friends />}
-                errorElement={<ErrorPage />}
-              />
-              <Route
-                path="/uses"
-                element={<Uses />}
-                errorElement={<ErrorPage />}
-              />
-              <Route
-                path="/now"
-                element={<Now />}
-                errorElement={<ErrorPage />}
-              />
-              <Route
-                path="/photos"
-                element={<Photos />}
-                errorElement={<ErrorPage />}
-              />
-              <Route
-                path="/bookmarks"
-                element={<Bookmarks />}
-                errorElement={<ErrorPage />}
-              />
-              <Route path="/404" element={<NotFound />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <AnimatedRoutes />
+            <Footer />
           </main>
         </body>
       </BrowserRouter>

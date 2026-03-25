@@ -24,7 +24,7 @@ export default function Friends() {
             <span className='text-xs text-[#bbbbbb] tabular-nums w-6 shrink-0'>
               {String(index + 1).padStart(2, '0')}
             </span>
-            <span className='text-sm font-medium text-[#111111] flex-1 sm:flex-none sm:w-1/5'>
+            <span className='text-sm font-medium text-[#111111] flex-1 sm:flex-none sm:w-1/5 font-serif'>
               {friend.name}
             </span>
             {friend.description && (
@@ -49,7 +49,7 @@ export default function Friends() {
                 rel='noopener noreferrer'
                 className='text-sm text-[#999999] hover:text-[#111111] transition-colors shrink-0'
               >
-                ↗
+                →
               </a>
             )}
           </div>

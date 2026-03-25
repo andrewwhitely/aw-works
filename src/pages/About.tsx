@@ -1,4 +1,5 @@
 import { metaData } from '@/config';
+import { ScrollColorText } from '@/components/ScrollColorText';
 import { Helmet } from 'react-helmet-async';
 
 export default function About() {
@@ -12,14 +13,14 @@ export default function About() {
         About
       </h1>
       <div className='prose prose-neutral'>
-        <p className='text-[#111111]'>
+        <ScrollColorText>
           I'm a software engineer who loves diving into the deep end. As early
           as I can remember, I was always finding ways to build things on my
           computer &mdash; virtual servers to host radio stations, spinning up
           web forums, developing games, and more. I always had a passion for
           making things that looked great, felt great, and helped people.
-        </p>
-        <p className='text-[#111111]'>
+        </ScrollColorText>
+        <ScrollColorText>
           My first <span className='italic font-serif'>oh, wow</span> moment was
           when I would spend hours making{' '}
           <a
@@ -33,8 +34,8 @@ export default function About() {
           learning as much as I could about design. This exposure and love for
           how I was able to create such simple graphics has stuck with me and is
           a driving force that I bring to the products I build today.
-        </p>
-        <p className='text-[#111111]'>
+        </ScrollColorText>
+        <ScrollColorText>
           When I'm not coding, you can find me binging YouTube videos on the
           history of video games, watching Formula 1, or cycling. I also love{' '}
           <a
@@ -61,7 +62,7 @@ export default function About() {
             read
           </a>{' '}
           a good book.
-        </p>
+        </ScrollColorText>
       </div>
     </section>
   );

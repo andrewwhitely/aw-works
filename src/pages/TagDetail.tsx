@@ -20,11 +20,11 @@ export default function TagDetail() {
       </Helmet>
       <Link
         to='/fieldnotes/tags'
-        className='text-xs text-[#bbbbbb] hover:text-[#666666] transition-colors mb-8 inline-block link hover-1'
+        className='text-xs text-[#bbbbbb] hover:text-[#666666] transition-colors mb-4 inline-block link hover-1'
       >
         ← All Tags
       </Link>
-      <div className='flex items-baseline gap-3 my-4'>
+      <div className='flex items-baseline gap-3 mb-4'>
         <h1 className='text-sm font-medium tracking-widest uppercase text-[#666666]'>
           Tag: {tag}
         </h1>

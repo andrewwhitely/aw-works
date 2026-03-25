@@ -10,92 +10,115 @@ export interface Project {
   links?: { label: string; href: string }[];
   about?: string[];
   features?: string[];
+  planned?: string[];
   notes?: { label: string; value: string; href?: string }[];
+  capabilities?: string[] | { [key: string]: string[] }[];
+  services?: string[];
 }
 
 export const projects: Project[] = [
   {
-    slug: "surely-work",
-    title: "Surely + Work",
-    category: "web",
-    year: 2024,
+    slug: 'lunchbox-studio',
+    title: 'Lunchbox Studio',
+    category: 'web',
+    year: 2025,
+    description: 'A techology-first, creative design and development studio.',
+    tags: ['Studio', 'Design', 'Development'],
+    links: [{ label: 'Visit →', href: 'https://lunchbox.studio' }],
+    about: [
+      'Lunchbox Studio is an independent design and development studio I founded to take on creative endeavors — building beautiful and engaging digital experiences for the people.',
+    ],
+    capabilities: [
+      {
+        Branding: [
+          'Identity',
+          'Design Systems',
+          'Photography',
+          'Voice & Tone',
+          'Typography',
+        ],
+      },
+      {
+        Digital: [
+          'Responsive Website Design',
+          'User Experience',
+          'User Interface Design',
+          'Digital Experiences',
+          'Architecture',
+        ],
+      },
+      {
+        Technology: [
+          'Web Design & Development',
+          'iOS Development',
+          'eCommerce',
+          'Consulting',
+          'Strategy',
+          'Architecture Design',
+          'API Design, Development & Integration',
+          'AI Strategy, Design, & Implementation',
+        ],
+      },
+      {
+        Product: [
+          'Research',
+          'Design',
+          'Strategy',
+          'Development',
+          'Copywriting',
+          'SEO',
+          'User Testing',
+        ],
+      },
+    ],
+    notes: [
+      { label: 'Type', value: 'Studio' },
+      { label: 'Role', value: 'Founder' },
+      { label: 'Year', value: '2025' },
+      { label: 'Status', value: 'Active', href: 'https://lunchbox.studio' },
+    ],
+  },
+  {
+    slug: 'toolshed',
+    title: 'ToolShed',
+    category: ['web', 'mobile'],
+    year: 2026,
     description:
-      "Freelance and gig-economy job board connecting creatives to the industry.",
-    tags: ["Job board", "Freelance", "Creatives"],
-    links: [{ label: "Visit site", href: "https://surelywork.com" }],
+      'A catalog and management dashboard for your tools and home improvement projects. Built by a builder, for builders.',
+    tags: ['Design', 'Development', 'Product', 'Website'],
+    links: [{ label: 'Visit →', href: 'https://toolshed.fyi' }],
     about: [
-      "Surely + Work is a job board built for creative professionals — designers, developers, photographers, and more — to find freelance and contract opportunities without the noise of traditional platforms.",
-      "As Lead Software Engineer, I architected and built the platform from the ground up, with a focus on a clean, fast experience for both employers and candidates.",
+      'ToolShed is a personal project born out of my love for building and home improvement. It’s a web app designed to help DIY enthusiasts catalog their tools, manage projects, and keep track of maintenance schedules.',
+      "The idea came to me as a new first-time homeowner. As it goes, the list of projects in my todo list started growing longer and longer, and I was quickly getting frustrated with the constant having to double and triple check everything I had, or having to make a mid-work trip to Lowe's to buy something.",
+      'ToolShed is built to be simple, intuitive, and focused on the needs of everyone from the weekend DIY warrior like myself to your average handyman or professional contractor.',
     ],
     features: [
-      "Browse and filter freelance and contract jobs by discipline",
-      "Employer dashboard for posting and managing listings",
-      "Candidate profiles and application tracking",
-      "Email notifications for new matching opportunities",
-      "Mobile-optimized for browsing on the go",
+      'Authentication and user accounts to keep your tool catalog and projects private and secure, and accessible across devices',
+      'Catalog your tools with photos, descriptions, and maintenance notes',
+      'Create a working backlog of projects with notes, tools required, cost, and estimated time to complete',
+      'Ability to create write-ups to capture project details, progress, and lessons learned',
+      'Branded themes so you can customize the look of the application to match your favorite brands',
+    ],
+    planned: [
+      'iOS Application with offline support and native features like camera integration for tool cataloging',
+      'A location-based neighborhood "marketplace" for seeing what is available in your area for borrowing, or listing tools you have available for others to borrow',
+      'For working professionals, a shareable portfolio to showcase your work and share with potential clients',
     ],
     notes: [
-      { label: "Type", value: "Web app" },
-      { label: "Role", value: "Lead Software Engineer" },
-      { label: "Stack", value: "React, Next.js, TypeScript" },
-      { label: "Year", value: "2024" },
-      { label: "Status", value: "Live", href: "https://surelywork.com" },
-    ],
-  },
-  {
-    slug: "lunchbox-studio",
-    title: "Lunchbox Studio",
-    category: "web",
-    year: 2025,
-    description: "Technology-focused design and development studio.",
-    tags: ["Studio", "Design", "Development"],
-    links: [{ label: "Visit site", href: "https://lunchbox.studio" }],
-    about: [
-      "Lunchbox Studio is a small, independent design and development studio I founded to take on focused client work — building thoughtful digital products for teams that care about quality.",
-      "The studio focuses on front-end development, product design, and web experiences. Every project is approached with the same care: clean code, strong visual design, and a focus on the end user.",
-    ],
-    features: [
-      "Front-end development for web and mobile",
-      "Product design and UI/UX",
-      "Design systems and component libraries",
-      "Performance optimization and accessibility",
-    ],
-    notes: [
-      { label: "Type", value: "Studio" },
-      { label: "Role", value: "Founder" },
-      { label: "Year", value: "2025" },
-      { label: "Status", value: "Active", href: "https://lunchbox.studio" },
-    ],
-  },
-  {
-    slug: "toolshed",
-    title: "ToolShed",
-    category: ["web", "mobile"],
-    year: 2025,
-    description: "Technology-focused design and development studio.",
-    tags: ["Studio", "Design", "Development"],
-    links: [{ label: "Visit site", href: "https://lunchbox.studio" }],
-    about: [
-      "Lunchbox Studio is a small, independent design and development studio I founded to take on focused client work — building thoughtful digital products for teams that care about quality.",
-      "The studio focuses on front-end development, product design, and web experiences. Every project is approached with the same care: clean code, strong visual design, and a focus on the end user.",
-    ],
-    features: [
-      "Front-end development for web and mobile",
-      "Product design and UI/UX",
-      "Design systems and component libraries",
-      "Performance optimization and accessibility",
-    ],
-    notes: [
-      { label: "Type", value: "Studio" },
-      { label: "Role", value: "Founder" },
-      { label: "Year", value: "2025" },
-      { label: "Status", value: "Active", href: "https://lunchbox.studio" },
+      { label: 'Type', value: 'Website' },
+      { label: 'Role', value: 'Design + Development' },
+      { label: 'Year', value: '2026' },
+      {
+        label: 'Status',
+        value: 'In Working Development',
+        href: 'https://toolshed.fyi',
+      },
     ],
   },
 ];
 
 export const categories: { key: CategoryKey; label: string }[] = [
-  { key: "web", label: "Web" },
-  { key: "mobile", label: "Mobile" },
-  { key: "other", label: "Other" },
+  { key: 'web', label: 'Web' },
+  { key: 'mobile', label: 'Mobile' },
+  { key: 'other', label: 'Other' },
 ];
