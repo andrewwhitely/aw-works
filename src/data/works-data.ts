@@ -30,6 +30,17 @@ export const projects: Project[] = [
     ],
     capabilities: [
       {
+        Product: [
+          'Research',
+          'Strategy',
+          'Design',
+          'Development',
+          'Copywriting',
+          'SEO',
+          'User Testing',
+        ],
+      },
+      {
         Branding: [
           'Identity',
           'Design Systems',
@@ -57,17 +68,6 @@ export const projects: Project[] = [
           'Architecture Design',
           'API Design, Development & Integration',
           'AI Strategy, Design, & Implementation',
-        ],
-      },
-      {
-        Product: [
-          'Research',
-          'Design',
-          'Strategy',
-          'Development',
-          'Copywriting',
-          'SEO',
-          'User Testing',
         ],
       },
     ],
