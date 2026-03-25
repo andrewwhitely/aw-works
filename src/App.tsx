@@ -23,7 +23,7 @@ export default function App() {
     <HelmetProvider>
       <BrowserRouter>
         <body className="antialiased min-h-screen flex flex-col mx-auto">
-          <main className="container mx-auto flex-1 min-w-0 mt-2 md:mt-6 flex flex-col px-6 sm:px-4 md:px-0 w-full">
+          <main className="container mx-auto flex-1 min-w-0 mt-2 md:mt-6 flex flex-col px-6 sm:px-4 md:px-0 w-full pb-12">
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} errorElement={<ErrorPage />} />

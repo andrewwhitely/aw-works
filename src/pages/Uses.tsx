@@ -34,17 +34,24 @@ export default function Uses() {
               </p>
               <ul>
                 {items.map((product, index) => (
-                  <li key={index} className="flex items-baseline gap-2 py-1">
-                    <span className="text-sm text-[#111111] shrink-0">
-                      {product.name}
-                    </span>
-                    {product.description && (
-                      <>
-                        <span className="flex-1 border-b border-dotted border-[#dddddd] mb-[3px]" />
-                        <span className="text-xs text-[#999999] shrink-0">
+                  <li key={index} className="py-1.5">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-sm text-[#111111] shrink-0">
+                        {product.name}
+                      </span>
+                      {product.description && (
+                        <span className="flex-1 border-b border-dotted border-[#dddddd] mb-[3px] hidden sm:block" />
+                      )}
+                      {product.description && (
+                        <span className="text-xs text-[#999999] shrink-0 hidden sm:block">
                           {product.description}
                         </span>
-                      </>
+                      )}
+                    </div>
+                    {product.description && (
+                      <p className="text-xs text-[#999999] mt-0.5 sm:hidden">
+                        {product.description}
+                      </p>
                     )}
                   </li>
                 ))}

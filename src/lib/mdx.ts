@@ -1,4 +1,8 @@
-import type { ComponentType } from "react";
+import type { ComponentType } from 'react';
+
+export type MDXComponent = ComponentType<{
+  components?: Record<string, unknown>;
+}>;
 
 export type Post = {
   slug: string;
@@ -6,37 +10,76 @@ export type Post = {
   date: string;
   excerpt: string;
   tags: string[];
+  runtime?: string;
+  wordCount: number;
 };
 
 type FrontmatterRecord = Record<
   string,
-  { title: string; date: string; excerpt: string; tags: string[] }
+  {
+    title: string;
+    date: string;
+    excerpt: string;
+    tags: string[];
+    runtime?: string;
+  }
 >;
 
 // Eager import of frontmatter only — used by listing pages with zero MDX chunk overhead
-const postFrontmatter = import.meta.glob("../../content/posts/**/*.mdx", {
+const postFrontmatter = import.meta.glob('../../content/posts/**/*.mdx', {
   eager: true,
-  import: "frontmatter",
+  import: 'frontmatter',
 }) as FrontmatterRecord;
 
+// Raw source for word count / reading time calculation
+const postRawSources = import.meta.glob('../../content/posts/**/*.mdx', {
+  eager: true,
+  query: '?raw',
+  import: 'default',
+}) as Record<string, string>;
+
 // Lazy import for MDX components — loaded on demand when visiting a post
-const postModules = import.meta.glob("../../content/posts/**/*.mdx", {
+const postModules = import.meta.glob('../../content/posts/**/*.mdx', {
   eager: false,
 });
 
 function pathToSlug(globKey: string): string {
-  return globKey.replace("../../content/posts/", "").replace(/\.mdx$/, "");
+  return globKey.replace('../../content/posts/', '').replace(/\.mdx$/, '');
+}
+
+function countWords(raw: unknown): number {
+  if (typeof raw !== 'string' || !raw) return 0;
+  const withoutFrontmatter = raw.replace(/^---[\s\S]*?---/, '');
+  const text = withoutFrontmatter
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/`[^`]*`/g, '')
+    .replace(/!\[.*?\]\(.*?\)/g, '')
+    .replace(/\[.*?\]\(.*?\)/g, '$1')
+    .replace(/<[^>]+>/g, '')
+    .replace(/[#*_~>`]/g, '')
+    .trim();
+  return text.split(/\s+/).filter(Boolean).length;
+}
+
+export function readingTime(wordCount: number): string {
+  const mins = Math.max(1, Math.ceil(wordCount / 200));
+  return `${mins} min read`;
 }
 
 function buildIndex(): Post[] {
   return Object.entries(postFrontmatter)
-    .map(([filePath, fm]) => ({
-      slug: pathToSlug(filePath),
-      title: fm.title,
-      date: fm.date,
-      excerpt: fm.excerpt,
-      tags: fm.tags ?? [],
-    }))
+    .map(([filePath, fm]) => {
+      const raw = postRawSources[filePath] ?? '';
+      return {
+        slug: pathToSlug(filePath),
+        title: fm.title,
+        date: fm.date,
+        excerpt: fm.excerpt,
+        tags: fm.tags ?? [],
+        runtime: fm.runtime,
+        wordCount: countWords(raw),
+      };
+    })
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
@@ -79,10 +122,10 @@ export function getAdjacentPosts(slug: string): {
 // Async loader — used by FieldNotesPost to get the compiled MDX component
 export async function loadPostComponent(
   slug: string,
-): Promise<ComponentType | null> {
+): Promise<MDXComponent | null> {
   const key = `../../content/posts/${slug}.mdx`;
   const loader = postModules[key];
   if (!loader) return null;
-  const mod = await (loader as () => Promise<{ default: ComponentType }>)();
+  const mod = await (loader as () => Promise<{ default: MDXComponent }>)();
   return mod.default;
 }

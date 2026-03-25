@@ -1,13 +1,13 @@
-import { Helmet } from "react-helmet-async";
-import { Link, Navigate, useParams } from "react-router-dom";
-import { projects } from "@/data/works-data";
-import { metaData } from "@/config";
+import { metaData } from '@/config';
+import { projects } from '@/data/works-data';
+import { Helmet } from 'react-helmet-async';
+import { Link, Navigate, useParams } from 'react-router-dom';
 
 export default function WorkDetail() {
   const { slug } = useParams<{ slug: string }>();
   const project = projects.find((p) => p.slug === slug);
 
-  if (!project) return <Navigate to="/404" replace />;
+  if (!project) return <Navigate to='/404' replace />;
 
   return (
     <section>
@@ -15,21 +15,21 @@ export default function WorkDetail() {
         <title>
           {project.title} | {metaData.name}
         </title>
-        <meta name="description" content={project.description} />
+        <meta name='description' content={project.description} />
       </Helmet>
       <Link
-        to="/works"
-        className="text-xs text-[#bbbbbb] hover:text-[#666666] transition-colors mb-8 inline-block link link-wrapper hover-1"
+        to='/works'
+        className='text-xs text-[#bbbbbb] hover:text-[#666666] transition-colors mb-8 inline-block link hover-1'
       >
         ← All Works
       </Link>
       {/* Tags */}
       {project.tags && project.tags.length > 0 && (
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className='flex flex-wrap gap-2 mb-6'>
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="text-xs text-[#999999] border border-[#e0e0e0] rounded px-2 py-0.5"
+              className='text-xs text-[#999999] border border-[#e0e0e0] rounded px-2 py-0.5'
             >
               {tag}
             </span>
@@ -38,21 +38,21 @@ export default function WorkDetail() {
       )}
 
       {/* Title + description */}
-      <h1 className="text-2xl font-medium tracking-tight text-[#111111] mb-2">
+      <h1 className='text-2xl font-medium tracking-tight text-[#111111] mb-2'>
         {project.title}
       </h1>
-      <p className="text-[#666666] mb-6">{project.description}</p>
+      <p className='text-[#666666] mb-6'>{project.description}</p>
 
       {/* Links */}
       {project.links && project.links.length > 0 && (
-        <div className="flex flex-wrap gap-2 mb-10">
+        <div className='flex flex-wrap gap-2 mb-10'>
           {project.links.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-[#111111] border border-[#e0e0e0] rounded px-3 py-1.5 hover:border-[#999999] transition-colors"
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-sm text-[#111111] border border-[#e0e0e0] rounded px-3 py-1.5 hover:border-[#999999] transition-colors'
             >
               {link.label}
             </a>
@@ -61,15 +61,15 @@ export default function WorkDetail() {
       )}
 
       {/* Body */}
-      <div className="flex flex-col md:flex-row gap-6">
+      <div className='flex flex-col md:flex-row gap-6'>
         {/* Main content */}
-        <div className="flex-1 space-y-8 min-w-0">
+        <div className='flex-1 space-y-8 min-w-0'>
           {project.about && project.about.length > 0 && (
-            <div className="border border-[#e0e0e0] rounded-lg p-6">
-              <h2 className="text-sm font-medium text-[#111111] mb-4">About</h2>
-              <div className="space-y-3">
+            <div className='border border-[#e0e0e0] rounded-lg p-6'>
+              <h2 className='text-sm font-medium text-[#111111] mb-4'>About</h2>
+              <div className='space-y-3'>
                 {project.about.map((para, i) => (
-                  <p key={i} className="text-sm text-[#444444] leading-relaxed">
+                  <p key={i} className='text-sm text-[#444444] leading-relaxed'>
                     {para}
                   </p>
                 ))}
@@ -78,17 +78,17 @@ export default function WorkDetail() {
           )}
 
           {project.features && project.features.length > 0 && (
-            <div className="border border-[#e0e0e0] rounded-lg p-6">
-              <h2 className="text-sm font-medium text-[#111111] mb-4">
+            <div className='border border-[#e0e0e0] rounded-lg p-6'>
+              <h2 className='text-sm font-medium text-[#111111] mb-4'>
                 What it does
               </h2>
-              <ul className="space-y-2">
+              <ul className='space-y-2'>
                 {project.features.map((feature, i) => (
                   <li
                     key={i}
-                    className="text-sm text-[#444444] leading-relaxed flex gap-2"
+                    className='text-sm text-[#444444] leading-relaxed flex gap-2'
                   >
-                    <span className="text-[#bbbbbb] shrink-0">–</span>
+                    <span className='text-[#bbbbbb] shrink-0'>–</span>
                     {feature}
                   </li>
                 ))}
@@ -99,24 +99,24 @@ export default function WorkDetail() {
 
         {/* Notes sidebar */}
         {project.notes && project.notes.length > 0 && (
-          <div className="md:w-56 shrink-0">
-            <div className="border border-[#e0e0e0] rounded-lg p-6">
-              <h2 className="text-sm font-medium text-[#111111] mb-4">Notes</h2>
-              <div className="space-y-3">
+          <div className='md:w-56 shrink-0'>
+            <div className='border border-[#e0e0e0] rounded-lg p-6'>
+              <h2 className='text-sm font-medium text-[#111111] mb-4'>Notes</h2>
+              <div className='space-y-3'>
                 {project.notes.map((note) => (
-                  <div key={note.label} className="flex flex-col gap-0.5">
-                    <span className="text-xs text-[#999999]">{note.label}</span>
+                  <div key={note.label} className='flex flex-col gap-0.5'>
+                    <span className='text-xs text-[#999999]'>{note.label}</span>
                     {note.href ? (
                       <a
                         href={note.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-[#111111] underline decoration-[#dddddd] underline-offset-2 hover:decoration-[#999999] transition-colors"
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='text-sm text-[#111111] underline decoration-[#dddddd] underline-offset-2 hover:decoration-[#999999] transition-colors'
                       >
                         {note.value}
                       </a>
                     ) : (
-                      <span className="text-sm text-[#111111]">
+                      <span className='text-sm text-[#111111]'>
                         {note.value}
                       </span>
                     )}
