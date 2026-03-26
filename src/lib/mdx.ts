@@ -22,6 +22,7 @@ type FrontmatterRecord = Record<
 		excerpt: string;
 		tags: string[];
 		runtime?: string;
+		draft?: boolean;
 	}
 >;
 
@@ -31,12 +32,11 @@ const postFrontmatter = import.meta.glob('../../content/posts/**/*.mdx', {
 	import: 'frontmatter',
 }) as FrontmatterRecord;
 
-// Raw source for word count / reading time calculation
-const postRawSources = import.meta.glob('../../content/posts/**/*.mdx', {
+// Word count baked in at compile time by remarkWordCount plugin
+const postWordCounts = import.meta.glob('../../content/posts/**/*.mdx', {
 	eager: true,
-	query: '?raw',
-	import: 'default',
-}) as Record<string, string>;
+	import: 'wordCount',
+}) as Record<string, number>;
 
 // Lazy import for MDX components — loaded on demand when visiting a post
 const postModules = import.meta.glob('../../content/posts/**/*.mdx', {
@@ -47,20 +47,6 @@ function pathToSlug(globKey: string): string {
 	return globKey.replace('../../content/posts/', '').replace(/\.mdx$/, '');
 }
 
-function countWords(raw: unknown): number {
-	if (typeof raw !== 'string' || !raw) return 0;
-	const withoutFrontmatter = raw.replace(/^---[\s\S]*?---/, '');
-	const text = withoutFrontmatter
-		.replace(/```[\s\S]*?```/g, '')
-		.replace(/`[^`]*`/g, '')
-		.replace(/!\[.*?\]\(.*?\)/g, '')
-		.replace(/\[.*?\]\(.*?\)/g, '$1')
-		.replace(/<[^>]+>/g, '')
-		.replace(/[#*_~>`]/g, '')
-		.trim();
-	return text.split(/\s+/).filter(Boolean).length;
-}
-
 export function readingTime(wordCount: number): string {
 	const mins = Math.max(1, Math.ceil(wordCount / 200));
 	return `${mins} min read`;
@@ -68,8 +54,8 @@ export function readingTime(wordCount: number): string {
 
 function buildIndex(): Post[] {
 	return Object.entries(postFrontmatter)
+		.filter(([, fm]) => !fm.draft)
 		.map(([filePath, fm]) => {
-			const raw = postRawSources[filePath] ?? '';
 			return {
 				slug: pathToSlug(filePath),
 				title: fm.title,
@@ -77,7 +63,7 @@ function buildIndex(): Post[] {
 				excerpt: fm.excerpt,
 				tags: fm.tags ?? [],
 				runtime: fm.runtime,
-				wordCount: countWords(raw),
+				wordCount: postWordCounts[filePath] ?? 0,
 			};
 		})
 		.sort((a, b) => (a.date < b.date ? 1 : -1));

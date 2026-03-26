@@ -2,7 +2,6 @@ import { nowData } from '@/data/now-data';
 import { useEffect, useState } from 'react';
 
 export default function Current() {
-	const { reading, listening, watching } = nowData;
 	const MY_TIMEZONE = 'America/New_York';
 
 	const myFormatter = new Intl.DateTimeFormat([], {
@@ -70,33 +69,35 @@ export default function Current() {
 						/>
 					</span>
 				)}
-				{reading.value && (
-					<StatusItem
-						icon={<BookIcon />}
-						label={reading.label}
-						value={reading.value}
-						href={reading.href}
-					/>
-				)}
-				{listening.value && (
-					<StatusItem
-						icon={<HeadphonesIcon />}
-						label={listening.label}
-						value={listening.value}
-						href={listening.href}
-					/>
-				)}
-				{watching.value && (
-					<StatusItem
-						icon={<MonitorIcon />}
-						label={watching.label}
-						value={watching.value}
-						href={watching.href}
-					/>
+
+				{(['reading', 'listening', 'watching'] as const).flatMap(
+					(key) =>
+						nowData[key].map((item, i) => (
+							<StatusItem
+								key={`${key}-${i}`}
+								icon={getIconForKey(key)}
+								label={key}
+								value={item.value}
+								href={item.href}
+							/>
+						))
 				)}
 			</div>
 		</footer>
 	);
+}
+
+function getIconForKey(key: string) {
+	switch (key) {
+		case 'reading':
+			return <BookIcon />;
+		case 'listening':
+			return <HeadphonesIcon />;
+		case 'watching':
+			return <MonitorIcon />;
+		default:
+			return null;
+	}
 }
 
 // Icons as inline SVGs to avoid extra dependencies

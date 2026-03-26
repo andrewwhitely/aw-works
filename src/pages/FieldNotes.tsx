@@ -1,8 +1,8 @@
+import { metaData } from '@/config';
+import { getAllPosts, type Post } from '@/lib/mdx';
+import { format } from 'date-fns';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { format } from 'date-fns';
-import { getAllPosts, type Post } from '@/lib/mdx';
-import { metaData } from '@/config';
 
 function FieldNotesList({ posts }: { posts: Post[] }) {
 	return (

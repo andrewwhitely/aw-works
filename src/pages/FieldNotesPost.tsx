@@ -1,3 +1,5 @@
+import { BibGourmand } from '@/components/BibGourmand';
+import { MichelinStar } from '@/components/MichelinStar';
 import { ScrollColorText } from '@/components/ScrollColorText';
 import { metaData } from '@/config';
 import {
@@ -88,6 +90,8 @@ export default function FieldNotesPost() {
 							h3: (props: object) => (
 								<ScrollColorText as="h3" {...props} />
 							),
+							MichelinStar,
+							BibGourmand,
 						}}
 					/>
 				) : (
@@ -96,7 +100,7 @@ export default function FieldNotesPost() {
 			</div>
 
 			{(prev || next) && (
-				<div className="mt-12 flex justify-between pt-8">
+				<div className="mt-12 flex justify-between py-4">
 					{prev && (
 						<Link
 							to={`/fieldnotes/${prev.slug}`}

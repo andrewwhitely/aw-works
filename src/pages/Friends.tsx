@@ -39,7 +39,11 @@ export default function Friends() {
 								rel="noopener noreferrer"
 								className="text-sm text-[#999999] hover:text-[#111111] transition-colors flex-1 hidden sm:block"
 							>
-								{friend.url.replace(/(^\w+:|^)\/\//, '')}
+								{friend.label
+									? friend.label
+									: friend.url
+											.replace(/(^\w+:|^)\/\//, '')
+											.replace(/^www\./, '')}
 							</a>
 						)}
 						{friend.url && (
