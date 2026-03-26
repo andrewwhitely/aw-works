@@ -1,2 +1,6 @@
 name = "aw-works"
 pages_build_output_dir = "dist"
+
+[[r2_buckets]]
+binding = "awphotostudio"
+bucket_name = "awphotostudio"
