@@ -7,6 +7,11 @@ export type Friend = {
 
 export const friends: Partial<Friend>[] = [
 	{
+		name: 'Alec Minchington',
+		description: 'Softwre Engineer @ Rocket Loans',
+		url: 'https://alecminchington.me',
+	},
+	{
 		name: 'Brandon Clay',
 		description: 'Designer',
 		url: 'https://builtbyclay.com',
