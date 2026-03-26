@@ -11,7 +11,6 @@ import FieldNotesPost from '@/pages/FieldNotesPost';
 import Friends from '@/pages/Friends';
 import Home from '@/pages/Home';
 import NotFound from '@/pages/NotFound';
-import Now from '@/pages/Now';
 import Photos from '@/pages/Photos';
 import TagDetail from '@/pages/TagDetail';
 import Tags from '@/pages/Tags';
@@ -124,15 +123,6 @@ function AnimatedRoutes() {
 					element={
 						<PageTransition>
 							<Uses />
-						</PageTransition>
-					}
-					errorElement={<ErrorPage />}
-				/>
-				<Route
-					path="/now"
-					element={
-						<PageTransition>
-							<Now />
 						</PageTransition>
 					}
 					errorElement={<ErrorPage />}
