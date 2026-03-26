@@ -8,7 +8,7 @@ export type Friend = {
 export const friends: Partial<Friend>[] = [
 	{
 		name: 'Alec Minchington',
-		description: 'Softwre Engineer @ Rocket Loans',
+		description: 'Software Engineer @ Rocket Loans',
 		url: 'https://alecminchington.me',
 	},
 	{
