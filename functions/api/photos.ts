@@ -1,3 +1,5 @@
+/// <reference types="@cloudflare/workers-types" />
+
 interface Env {
 	awphotostudio: R2Bucket;
 	R2_PUBLIC_URL: string;
