@@ -1,8 +1,10 @@
-import { metaData } from '@/config';
 import { ScrollColorText } from '@/components/ScrollColorText';
+import { metaData } from '@/config';
 import { Helmet } from 'react-helmet-async';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function About() {
+	const { pathname } = useLocation();
 	return (
 		<section>
 			<Helmet>
@@ -49,13 +51,17 @@ export default function About() {
 						movies
 					</a>
 					,{' '}
-					<a
-						href="https://byandrew.xyz"
-						target="_blank"
-						rel="noopener noreferrer"
+					<Link
+						key="photos"
+						to="/photos"
+						className={`transition-colors ${
+							pathname
+								? 'text-[#111111]'
+								: 'text-[#666666] hover:text-[#111111]'
+						}`}
 					>
 						photography
-					</a>
+					</Link>
 					, and am always trying to{' '}
 					<a
 						href="https://fable.co/fabler/andrewwhitely-192731124337"

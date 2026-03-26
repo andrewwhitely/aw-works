@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
-import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
 import { metaData } from '@/config';
+import { motion } from 'motion/react';
+import { useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import type { PhotoItem } from '../../functions/api/photos';
 
 const ALL_TAB = 'all';
@@ -46,7 +46,11 @@ function PhotoCard({ photo }: { photo: PhotoItem }) {
 				<motion.div
 					className="absolute inset-0 bg-[#e0e0e0]"
 					animate={{ opacity: [0.4, 0.8, 0.4] }}
-					transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}
+					transition={{
+						duration: 1.4,
+						repeat: Infinity,
+						ease: 'easeInOut',
+					}}
 				/>
 			)}
 			<motion.img
@@ -95,9 +99,7 @@ export default function Photos() {
 		const el = scrollRef.current;
 		if (!el) return;
 		setCanScrollLeft(el.scrollLeft > 0);
-		setCanScrollRight(
-			el.scrollLeft < el.scrollWidth - el.clientWidth - 1
-		);
+		setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 1);
 	};
 
 	useEffect(() => {
@@ -125,7 +127,7 @@ export default function Photos() {
 				<meta name="description" content="Film photography." />
 			</Helmet>
 			<p className="text-sm text-[#666666] mb-6">
-				Shot on Fujifilm GS645S, Yashica T4, and Fujifilm X100VI.
+				A collection of my photos. Taken on a mix of film and digital.
 			</p>
 
 			{/* Scrollable tabs with edge fade */}

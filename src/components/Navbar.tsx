@@ -10,6 +10,7 @@ const navItems = {
 	'': { name: '·' },
 	'/fieldnotes': { name: 'field notes' },
 	'/friends': { name: 'friends' },
+	'/photos': { name: 'photos' },
 	'/uses': { name: 'uses' },
 };
 
