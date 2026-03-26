@@ -17,7 +17,7 @@ export const friends: Partial<Friend>[] = [
 		url: 'https://roe.fyi',
 	},
 	{
-		name: 'Trevon Wiggs',
+		name: 'Tre Wiggs',
 		description: 'Software Engineer @ Snap',
 		url: 'https://www.instagram.com/trwggs',
 		label: '@trwggs',
