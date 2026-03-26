@@ -18,7 +18,7 @@ const SKELETON_ASPECTS = [
 
 function SkeletonGrid() {
 	return (
-		<div className="columns-2 gap-3">
+		<div className="columns-1 sm:columns-2 gap-3">
 			{SKELETON_ASPECTS.map((aspect, i) => (
 				<motion.div
 					key={i}
@@ -164,7 +164,7 @@ export default function Photos() {
 			{loading ? (
 				<SkeletonGrid />
 			) : (
-				<div className="columns-2 gap-3">
+				<div className="columns-1 sm:columns-2 gap-3">
 					{visible.map((photo) => (
 						<PhotoCard key={photo.key} photo={photo} />
 					))}
