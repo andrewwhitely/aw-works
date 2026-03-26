@@ -1,6 +1,7 @@
 import Footer from '@/components/Footer';
 import { LoadingScreen } from '@/components/LoadingScreen';
 import { Navbar } from '@/components/Navbar';
+import { ScrollToTop } from '@/components/ScrollToTop';
 import { PageTransition } from '@/components/PageTransition';
 import About from '@/pages/About';
 import Bookmarks from '@/pages/Bookmarks';
@@ -184,6 +185,7 @@ export default function App() {
 						<AnimatedRoutes />
 						<Footer />
 					</main>
+				<ScrollToTop />
 				</body>
 			</BrowserRouter>
 		</HelmetProvider>

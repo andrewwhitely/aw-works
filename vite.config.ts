@@ -76,6 +76,11 @@ export default defineConfig({
 			'@': resolve(__dirname, 'src'),
 		},
 	},
+	server: {
+		proxy: {
+			'/api': 'https://aw.works',
+		},
+	},
 	build: {
 		outDir: 'dist',
 	},
