@@ -20,7 +20,9 @@ export function LoadingScreen({ visible }: Props) {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.35, ease: 'easeOut' }}
 					>
-						aw
+						<div className="h-8 w-12 overflow-hidden flex items-center justify-center animate-pulse">
+							<img src="/logo.png" alt="AW" />
+						</div>
 					</motion.span>
 				</motion.div>
 			)}
