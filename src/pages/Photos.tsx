@@ -196,7 +196,7 @@ export default function Photos() {
 				<meta name="description" content="Film photography." />
 			</Helmet>
 			<p className="text-sm text-[#666666] mb-6">
-				A collection of my photos. Taken on a mix of film and digital.
+				A collection of my photos, shot on film and digital.
 			</p>
 
 			{!initialLoading && allTabs.length > 1 && (

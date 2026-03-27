@@ -21,7 +21,7 @@ export const projects: Project[] = [
 		slug: 'lunchbox-studio',
 		title: 'Lunchbox Studio',
 		category: 'web',
-		year: 2025,
+		year: 2024,
 		description:
 			'A techology-first, creative design and development studio.',
 		tags: ['Studio', 'Design', 'Development'],
@@ -75,7 +75,7 @@ export const projects: Project[] = [
 		notes: [
 			{ label: 'Type', value: 'Studio' },
 			{ label: 'Role', value: 'Founder' },
-			{ label: 'Year', value: '2025' },
+			{ label: 'Year', value: '2024' },
 			{
 				label: 'Status',
 				value: 'Active',
@@ -115,7 +115,7 @@ export const projects: Project[] = [
 			{ label: 'Year', value: '2026' },
 			{
 				label: 'Status',
-				value: 'In Working Development',
+				value: 'Active, In Development',
 				href: 'https://toolshed.fyi',
 			},
 		],

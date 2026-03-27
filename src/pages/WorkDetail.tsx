@@ -11,7 +11,7 @@ export default function WorkDetail() {
 	if (!project) return <Navigate to="/404" replace />;
 
 	return (
-		<section className="mb-4">
+		<section className="mb-12">
 			<Helmet>
 				<title>
 					{project.title} | {metaData.name}

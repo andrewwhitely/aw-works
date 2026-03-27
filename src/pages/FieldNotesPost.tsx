@@ -57,7 +57,7 @@ export default function FieldNotesPost() {
 					))}
 				</div>
 			)}
-			<div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-4">
+			<div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-12">
 				<span className="text-[#999999] text-sm">
 					{format(new Date(post.date), 'MMMM dd, yyyy')}
 				</span>

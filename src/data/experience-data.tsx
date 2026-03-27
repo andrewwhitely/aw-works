@@ -2,7 +2,7 @@ export interface Role {
 	title: string;
 	start: number;
 	end?: number | string;
-	description: string;
+	description?: string;
 	url: string;
 	locked?: boolean;
 	current?: boolean;
@@ -12,21 +12,17 @@ export interface Role {
 
 export const Jobs: Role[] = [
 	{
-		title: 'Surely + Work',
+		title: 'Surely Work',
 		start: 2024,
 		end: 2026,
 		locked: false,
-		current: true,
-		description:
-			'Freelance and gig-economy job board connecting creatives to the industry.',
+		current: false,
 		url: 'https://surelywork.com/',
-		role: 'Lead Software Engineer',
+		role: 'Lead Engineer',
 	},
 	{
 		title: 'Booz Allen Hamilton',
 		start: 2023,
-		description:
-			'Modernizing government technology with a focus on user-centered design and agile development.',
 		url: 'https://boozallen.com/',
 		locked: false,
 		current: true,
@@ -36,8 +32,6 @@ export const Jobs: Role[] = [
 		title: 'FirstFloor Studios',
 		start: 2022,
 		end: 2022,
-		description:
-			'Full-fledged mobile web3 marketplace, smart contract creation, and blockchain asset generation.',
 		url: 'https://firstfloor.app/',
 		locked: false,
 		current: false,
@@ -47,8 +41,6 @@ export const Jobs: Role[] = [
 		title: 'Capital One',
 		start: 2018,
 		end: 2022,
-		description:
-			'Shipped internal and consumer-facing applications, helping to change banking for good.',
 		url: 'https://capitalone.com/',
 		locked: false,
 		current: false,
@@ -56,11 +48,10 @@ export const Jobs: Role[] = [
 	},
 	{
 		title: 'Lunchbox Studio',
-		description: 'Technology-focused design and development studio.',
 		url: 'https://lunchbox.studio',
-		start: 2025,
+		start: 2024,
 		locked: false,
-		current: false,
+		current: true,
 		role: 'Founder',
 	},
 ];

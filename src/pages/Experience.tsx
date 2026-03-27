@@ -1,7 +1,7 @@
+import { metaData } from '@/config';
+import { Jobs, Projects } from '@/data/experience-data';
 import { Helmet } from 'react-helmet-async';
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
-import { Jobs, Projects } from '@/data/experience-data';
-import { metaData } from '@/config';
 
 export default function Experience() {
 	const currentYear = new Date().getFullYear();
@@ -38,42 +38,60 @@ export default function Experience() {
 				Experience
 			</h1>
 			<div className="space-y-8">
-				{workExperience.map((item, index) => (
-					<div key={index}>
-						<div className="flex items-baseline justify-between gap-4">
-							<h3 className="text-[#111111] font-medium tracking-tight">
-								{item.role}
-							</h3>
-							<span className="text-sm text-[#666666] whitespace-nowrap shrink-0">
-								{item.start}
-								{item.start && item?.end
-									? ` – ${item.end}`
-									: item?.start > new Date().getFullYear()
-										? null
-										: ' – Present'}
-							</span>
+				{workExperience.map((item, index) => {
+					const isCurrent = getRolePriority(item) < 2;
+					const prevItem =
+						index > 0 ? workExperience[index - 1] : null;
+					const prevIsCurrent = prevItem
+						? getRolePriority(prevItem) < 2
+						: null;
+					const showHeader =
+						index === 0 || isCurrent !== prevIsCurrent;
+
+					return (
+						<div key={index}>
+							{showHeader && (
+								<h2 className="text-xs font-medium tracking-widest uppercase text-[#666666] mb-4">
+									{isCurrent ? 'Currently' : 'Previously'}
+								</h2>
+							)}
+							<div className="flex items-baseline justify-between gap-4">
+								<h3 className="text-[#111111] font-medium tracking-tight">
+									{item.role}
+								</h3>
+								<span className="text-sm text-[#666666] whitespace-nowrap shrink-0">
+									{item.start}
+									{item.start && item?.end
+										? ` – ${item.end}`
+										: item?.start > new Date().getFullYear()
+											? null
+											: ' – Present'}
+								</span>
+							</div>
+							<a
+								href={item.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								className={`text-sm text-[#666666] hover:text-[#111111] transition-colors inline-flex items-center gap-1 mt-0.5 ${
+									item.locked
+										? 'cursor-not-allowed pointer-events-none'
+										: ''
+								}`}
+							>
+								{item.title}
+								<FaArrowUpRightFromSquare className="w-2.5 h-2.5" />
+							</a>
+							{item.description && (
+								<p className="text-sm text-[#444444] mt-2 leading-relaxed">
+									{item.description}
+								</p>
+							)}
+							{index === 1 && (
+								<div className="border-t border-[#e0e0e0] my-8" />
+							)}
 						</div>
-						<a
-							href={item.url}
-							target="_blank"
-							rel="noopener noreferrer"
-							className={`text-sm text-[#666666] hover:text-[#111111] transition-colors inline-flex items-center gap-1 mt-0.5 ${
-								item.locked
-									? 'cursor-not-allowed pointer-events-none'
-									: ''
-							}`}
-						>
-							{item.title}
-							<FaArrowUpRightFromSquare className="w-2.5 h-2.5" />
-						</a>
-						<p className="text-sm text-[#444444] mt-2 leading-relaxed">
-							{item.description}
-						</p>
-						{index === 1 && (
-							<div className="border-t border-[#e0e0e0] my-8" />
-						)}
-					</div>
-				))}
+					);
+				})}
 			</div>
 		</section>
 	);

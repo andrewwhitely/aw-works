@@ -14,7 +14,7 @@ export default function About() {
 			<h1 className="mb-6 text-sm font-medium tracking-widest uppercase text-[#666666]">
 				About
 			</h1>
-			<div className="prose prose-neutral">
+			<div className="prose prose-neutral mb-12">
 				<ScrollColorText>
 					I'm a software engineer who loves diving into the deep end.
 					As early as I can remember, I was always finding ways to
