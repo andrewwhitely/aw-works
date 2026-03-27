@@ -22,10 +22,16 @@ const pulse = {
 };
 
 // Module-level cache — survives tab switches and back-navigation
-const cache: { photos: PhotoItem[]; cursor: string | null } = {
+const cache: { photos: PhotoItem[]; cursor: string | null; tags: string[] } = {
 	photos: [],
 	cursor: null,
+	tags: [],
 };
+
+async function fetchTags(): Promise<string[]> {
+	const res = await fetch('/api/photos?tags');
+	return res.json() as Promise<string[]>;
+}
 
 async function fetchPage(cursor?: string): Promise<PhotosResponse> {
 	const url = cursor ? `/api/photos?cursor=${cursor}` : '/api/photos';
@@ -97,6 +103,7 @@ function PhotoCard({ photo }: { photo: PhotoItem }) {
 export default function Photos() {
 	const [photos, setPhotos] = useState<PhotoItem[]>(cache.photos ?? []);
 	const [cursor, setCursor] = useState<string | null>(cache.cursor ?? null);
+	const [tags, setTags] = useState<string[]>(cache.tags);
 	const [initialLoading, setInitialLoading] = useState(
 		(cache.photos ?? []).length === 0
 	);
@@ -107,7 +114,16 @@ export default function Photos() {
 	const scrollRef = useRef<HTMLDivElement>(null);
 	const sentinelRef = useRef<HTMLDivElement>(null);
 
-	// Initial load — skip if cache is warm
+	// Fetch tags upfront — independent of photo pagination
+	useEffect(() => {
+		if (cache.tags.length > 0) return;
+		fetchTags().then((t) => {
+			cache.tags = t;
+			setTags(t);
+		});
+	}, []);
+
+	// Initial photo load — skip if cache is warm
 	useEffect(() => {
 		if (cache.photos.length > 0) return;
 		fetchPage().then(({ photos: p, cursor: c }) => {
@@ -141,10 +157,7 @@ export default function Photos() {
 		return () => observer.disconnect();
 	}, [cursor, loadingMore]);
 
-	const tags = [
-		ALL_TAB,
-		...Array.from(new Set(photos.map((p) => p.tag).filter(Boolean))),
-	];
+	const allTabs = [ALL_TAB, ...tags.filter(Boolean)];
 
 	const visible =
 		activeTab === ALL_TAB
@@ -167,7 +180,7 @@ export default function Photos() {
 			el?.removeEventListener('scroll', updateScrollState);
 			window.removeEventListener('resize', updateScrollState);
 		};
-	}, [tags]);
+	}, [allTabs]);
 
 	const maskImage = [
 		canScrollLeft ? 'transparent' : 'black',
@@ -186,7 +199,7 @@ export default function Photos() {
 				A collection of my photos. Taken on a mix of film and digital.
 			</p>
 
-			{!initialLoading && tags.length > 1 && (
+			{!initialLoading && allTabs.length > 1 && (
 				<div
 					className="relative mb-6"
 					style={{
@@ -199,7 +212,7 @@ export default function Photos() {
 						className="flex gap-4 overflow-x-auto"
 						style={{ scrollbarWidth: 'none' }}
 					>
-						{tags.map((tag) => (
+						{allTabs.map((tag) => (
 							<button
 								key={tag}
 								onClick={() => setActiveTab(tag)}

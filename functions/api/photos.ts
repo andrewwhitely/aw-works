@@ -21,6 +21,18 @@ const PAGE_SIZE = 24;
 export const onRequest: PagesFunction<Env> = async (context) => {
 	const { awphotostudio, R2_PUBLIC_URL } = context.env;
 	const params = new URL(context.request.url).searchParams;
+
+	// Lightweight tag-only listing using R2 delimiter — returns folder prefixes only
+	if (params.has('tags')) {
+		const listed = await awphotostudio.list({ delimiter: '/' });
+		const tags = (listed.delimitedPrefixes ?? []).map((p) =>
+			p.replace('/', '')
+		);
+		return Response.json(tags, {
+			headers: { 'Cache-Control': 'public, max-age=300' },
+		});
+	}
+
 	const cursor = params.get('cursor') ?? undefined;
 
 	const listed = await awphotostudio.list({
