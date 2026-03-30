@@ -86,7 +86,7 @@ export const projects: Project[] = [
 	{
 		slug: 'toolshed',
 		title: 'ToolShed',
-		category: ['web', 'mobile'],
+		category: ['web'],
 		year: 2026,
 		description:
 			'A catalog and management dashboard for your tools and home improvement projects. Built by a builder, for builders.',
