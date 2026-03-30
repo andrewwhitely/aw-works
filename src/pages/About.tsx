@@ -40,7 +40,7 @@ export default function About() {
 					that I bring to the products I build today.
 				</ScrollColorText>
 				<ScrollColorText>
-					When I'm not coding, you can find me binging YouTube videos
+					When I'm not coding, you can find me bingeing YouTube videos
 					on the history of video games, watching Formula 1, or
 					cycling. I also love{' '}
 					<a

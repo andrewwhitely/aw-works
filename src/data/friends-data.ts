@@ -48,4 +48,15 @@ export const friends: Partial<Friend>[] = [
 		description: 'Design Engineer @ Wander',
 		url: 'https://www.laurendorman.io',
 	},
+	{
+		name: 'Xavier Codie Robinson',
+		description: 'Founder @ Soun Media',
+		url: 'https://www.soun-media.com',
+	},
+	{
+		name: 'DaRaun Crawford',
+		description: 'Designer',
+		url: 'https://instagram.com/daraun',
+		label: '@daraun',
+	},
 ].sort((a, b) => a.name!.localeCompare(b.name!));
