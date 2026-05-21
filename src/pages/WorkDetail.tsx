@@ -43,10 +43,11 @@ export default function WorkDetail() {
 				<h1 className="text-2xl font-medium tracking-tight text-[#111111]">
 					{project.title}
 				</h1>
-				{project.links && project.links.length > 0 && (
+				{project.links?.length || project.privacy?.length ? (
 					<div className="flex flex-wrap gap-2">
-						{project.links.map((link) => (
+						{project.links?.map((link) => (
 							<Link
+								key={link.href}
 								to={link.href}
 								target="_blank"
 								rel="noopener noreferrer"
@@ -56,7 +57,7 @@ export default function WorkDetail() {
 							</Link>
 						))}
 					</div>
-				)}
+				) : null}
 			</div>
 			<p className="text-[#666666] mb-6">{project.description}</p>
 
@@ -193,6 +194,23 @@ export default function WorkDetail() {
 										</li>
 									))}
 								</ul>
+							</div>
+						</FadeIn>
+					)}
+
+					{project.privacy && project.privacy.length > 0 && (
+						<FadeIn delay={0.05}>
+							<hr className="border-[#eeeeee]" />
+							<div className="flex flex-wrap gap-3 pt-2">
+								{project.privacy.map((link) => (
+									<Link
+										key={link.href}
+										to={link.href}
+										className="text-sm text-[#999999] hover:text-[#666666] transition-colors"
+									>
+										{link.label}
+									</Link>
+								))}
 							</div>
 						</FadeIn>
 					)}

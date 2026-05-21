@@ -14,6 +14,7 @@ export interface Project {
 	notes?: { label: string; value: string; href?: string }[];
 	capabilities?: string[] | { [key: string]: string[] }[];
 	services?: string[];
+	privacy?: { label?: string; href: string }[];
 }
 
 export const projects: Project[] = [
@@ -84,6 +85,41 @@ export const projects: Project[] = [
 		],
 	},
 	{
+		slug: 'stash',
+		title: 'Stash',
+		category: ['mobile', 'desktop', 'web'],
+		year: 2026,
+		description: 'A personal wishlist tracker.',
+		tags: ['Design', 'Development', 'Product', 'Website', 'Mobile'],
+		links: [{ label: 'Visit →', href: '#' }],
+		about: [
+			"I built Stash because I felt like I was always losing track of the things that I wanted to buy. Honestly, that's really it.",
+			"It's a pretty straightforward app. You find something you like, add it to your Stash, and can track whether or not you've bought it, see quick price history, as well as categorize items.",
+			'This is really a great tool for budgeting, planning out expenses, or an easy way to always have an answer when asked what you want as a birthday or holiday gift (one of my biggest struggles).',
+		],
+		features: [
+			'Built with SwiftUI, providing a clean UX and UI - one that feels like it should have shipped with Apple.',
+			'Ability to quickly go from app to desktop and vice-versa, not losing any of your data.',
+			'Categorize wishlist items with the default or custom tags',
+			'View a quick overview of total spent, remaining items, and average item price.',
+			'An intuitive design and flow from start to finish.',
+		],
+		planned: [
+			'Browser extension for desktop and mobile to quickly send a URL to your Stash.',
+		],
+		notes: [
+			{ label: 'Type', value: 'iOS + Desktop App' },
+			{ label: 'Role', value: 'Design + Development' },
+			{ label: 'Year', value: '2026' },
+			{
+				label: 'Status',
+				value: 'In Development',
+				href: '#',
+			},
+		],
+		privacy: [{ label: 'Privacy Policy →', href: '/works/stash/privacy' }],
+	},
+	{
 		slug: 'toolshed',
 		title: 'ToolShed',
 		category: ['web'],
@@ -115,7 +151,7 @@ export const projects: Project[] = [
 			{ label: 'Year', value: '2026' },
 			{
 				label: 'Status',
-				value: 'Active, In Development',
+				value: 'In Development',
 				href: 'https://toolshed.fyi',
 			},
 		],
@@ -125,5 +161,6 @@ export const projects: Project[] = [
 export const categories: { key: CategoryKey; label: string }[] = [
 	{ key: 'web', label: 'Web' },
 	{ key: 'mobile', label: 'Mobile' },
+	{ key: 'desktop', label: 'Desktop' },
 	{ key: 'other', label: 'Other' },
 ];
