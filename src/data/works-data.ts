@@ -156,6 +156,123 @@ export const projects: Project[] = [
 			},
 		],
 	},
+	{
+		slug: 'sportfinder',
+		title: 'SportFinder',
+		category: ['web'],
+		year: 2026,
+		description:
+			'A sports team discovery engine that recommends new teams to follow based on the ones you already love.',
+		tags: ['Design', 'Development', 'Product', 'Website'],
+		about: [
+			'SportFinder answers the question every casual fan eventually asks: "I like the Lakers — what else should I watch?" You mark the teams you already follow, and the recommendation engine surfaces new ones across sports based on your taste profile.',
+			'The engine scores candidates against your fingerprint across multiple dimensions — team aesthetic and color palette, narrative and story arcs, entry ease for new fans, current form, watchability, and geography. Cross-sport recommendations are a first-class feature, not an afterthought.',
+			"The app lives entirely in the browser with no account required. Your selections are saved locally and can be shared via a URL. The backend is a Cloudflare Worker serving a static team catalog and the recommendation API.",
+		],
+		features: [
+			'Team browser covering NFL, NBA, MLB, NHL, Formula 1, top soccer leagues, tennis, and golf',
+			'Recommendation engine that scores teams against your taste fingerprint across palette, narrative, form, watchability, and geography',
+			'Cross-sport discovery — follow the Lakers and get surfaced teams from other sports with similar energy',
+			'Explore mode for getting into a new sport, with sport-level and team-level interest tracking',
+			'Fan fingerprint — a visual summary of your sports identity you can share or export',
+			'No account required — state lives in localStorage and is shareable via URL hash',
+		],
+		notes: [
+			{ label: 'Type', value: 'Website' },
+			{ label: 'Role', value: 'Design + Development' },
+			{ label: 'Year', value: '2026' },
+			{ label: 'Status', value: 'In Development' },
+		],
+	},
+	{
+		slug: 'truestack',
+		title: 'TrueStack',
+		category: ['web'],
+		year: 2026,
+		description:
+			'Anonymous employee reviews showing the gap between what a job posting promised and what the role actually is.',
+		tags: ['Design', 'Development', 'Product', 'Website'],
+		links: [{ label: 'Visit →', href: 'https://truestack.fyi' }],
+		about: [
+			'Job descriptions are written by marketing. TrueStack gives employees a place to submit structured, anonymous reviews that reveal the gap — the stack or tools you were told about versus what you actually touched, the duties that were listed versus what you spent your time on.',
+			'Every review captures the same signal: company, level, tech stack diff, duties diff, tech debt rating, a reality match score, and a recommendation. Because the structure is consistent, you can compare submissions across companies and roles rather than reading unstructured prose.',
+			'Verification is optional. If you choose to verify, you enter a work email and receive a one-time code. The email is never stored — only a SHA-256 hash is kept, used solely to enforce one verified review per person per company. Verified reviews get a badge and sort first in browse.',
+		],
+		features: [
+			'Anonymous submissions with no account required — a CAPTCHA and client-side quality guards keep it clean',
+			'Structured stack and duties diff fields rendered as a visual comparison, not free-form prose',
+			'Optional email verification with SHA-256 hashing — the raw address is never persisted',
+			'Verified badge as a social-proof incentive, not a gate — unverified reviews are still accepted',
+			'Browse and filter reviews by company, tech, and role with full pagination',
+			'Privacy-first by design — no manager names, team names, or exact dates that could identify a reviewer',
+		],
+		notes: [
+			{ label: 'Type', value: 'Website' },
+			{ label: 'Role', value: 'Design + Development' },
+			{ label: 'Year', value: '2026' },
+			{
+				label: 'Status',
+				value: 'Active',
+				href: 'https://truestack.fyi',
+			},
+		],
+	},
+	{
+		slug: 'latitude',
+		title: 'Latitude',
+		category: ['desktop'],
+		year: 2026,
+		description:
+			'A non-destructive film scan editor for macOS. Built for photographers who shoot film.',
+		tags: ['Design', 'Development', 'Product'],
+		about: [
+			'Latitude is a macOS desktop app for editing film scans — TIFF, JPEG, and DNG files from a lab scanner. It is scoped to the tools that actually matter for film: exposure, color grading, tone curve, and a film-base neutralization tool for clearing out scanner base cast.',
+			'The editing pipeline runs on WebGL2 in the renderer for real-time interactivity while Sharp handles full-resolution export in the main process. Every edit is non-destructive and serialized to a sidecar file next to the original, so your source scans are never touched.',
+			'A per-stock preset and recipe system lets you build up a library of starting points for each film stock you shoot, so your editing workflow starts where it left off.',
+		],
+		features: [
+			'Non-destructive editing with sidecar files — originals are never modified',
+			'Real-time WebGL2 pipeline for histogram, white balance, exposure, contrast, highlights, shadows, and more',
+			'Tone curve editor with RGB master and per-channel control',
+			'Three-wheel color grading for shadows, midtones, and highlights',
+			'Film-base neutralization tool — pick the scanner base color and neutralize it in one click',
+			'Per-stock preset and recipe system for saving and reapplying edits across a film stock',
+			'Full-resolution export with ICC profile handling and color space targeting',
+		],
+		notes: [
+			{ label: 'Type', value: 'macOS App' },
+			{ label: 'Role', value: 'Design + Development' },
+			{ label: 'Year', value: '2026' },
+			{ label: 'Status', value: 'In Development' },
+		],
+	},
+	{
+		slug: 'pins',
+		title: 'Pins',
+		category: ['mobile'],
+		year: 2026,
+		description: 'A bowling scorecard and stats tracker for iOS.',
+		tags: ['Design', 'Development', 'Product', 'Mobile'],
+		about: [
+			'Pins is an iOS app for tracking bowling games, calculating stats, and managing equipment. It is built for the bowler who wants more than a paper scorecard — a clean record of every game, session trends, and a persistent handicap that updates automatically.',
+			'I built it because I wanted something that felt like it belonged on iOS, not a ported web app. Everything from session logging to stats charts is native SwiftUI on iOS 18.',
+		],
+		features: [
+			'Log games frame-by-frame or scan a paper scorecard with the built-in camera scanner',
+			'Dashboard with rolling average, high game, strike rate, spare rate, and current handicap',
+			'Session mode for tracking multi-game sets at a single sitting',
+			'Handicap calculator supporting USBC formula and custom percentage and base score',
+			'Equipment tracker for your ball bag with per-ball notes',
+			'Session presets and oil pattern library for quick session setup',
+			'Stats charts for average over time, strike and spare trends, and game-by-game breakdown',
+		],
+		notes: [
+			{ label: 'Type', value: 'iOS App' },
+			{ label: 'Role', value: 'Design + Development' },
+			{ label: 'Year', value: '2026' },
+			{ label: 'Status', value: 'In Development' },
+		],
+	},
 ];
 
 export const categories: { key: CategoryKey; label: string }[] = [
