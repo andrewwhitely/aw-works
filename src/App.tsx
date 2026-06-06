@@ -19,6 +19,7 @@ import Uses from '@/pages/Uses';
 import WorkDetail from '@/pages/WorkDetail';
 import Works from '@/pages/Works';
 import StashPrivacy from '@/pages/StashPrivacy';
+import PinsSupport from '@/pages/PinsSupport';
 import { AnimatePresence } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
@@ -71,6 +72,15 @@ function AnimatedRoutes() {
 					element={
 						<PageTransition>
 							<StashPrivacy />
+						</PageTransition>
+					}
+					errorElement={<ErrorPage />}
+				/>
+				<Route
+					path="/works/pins/support"
+					element={
+						<PageTransition>
+							<PinsSupport />
 						</PageTransition>
 					}
 					errorElement={<ErrorPage />}
