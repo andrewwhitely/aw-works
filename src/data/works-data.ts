@@ -272,7 +272,10 @@ export const projects: Project[] = [
 			{ label: 'Year', value: '2026' },
 			{ label: 'Status', value: 'In Development' },
 		],
-		privacy: [{ label: 'Support →', href: '/works/pins/support' }],
+		privacy: [
+			{ label: 'Support →', href: '/works/pins/support' },
+			{ label: 'Privacy Policy →', href: '/works/pins/privacy' },
+		],
 	},
 ];
 
