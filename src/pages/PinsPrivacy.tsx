@@ -19,8 +19,7 @@ const sections = [
 			'Pins does not require an account and does not collect personal information about you. The app is designed to keep your data on your device.',
 		],
 		items: [
-			'Bowling data — games, scores, sessions, stats, handicap settings, equipment, and notes you enter.',
-			'Photos — when you use the camera scanner to capture a paper scorecard, the image is processed on your device to read scores. Pins does not upload these photos.',
+			'Bowling data — games, scores, sessions, stats, handicap settings, equipment, and notes you enter manually.',
 		],
 	},
 	{

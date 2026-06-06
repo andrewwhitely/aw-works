@@ -8,7 +8,7 @@ const faqs = [
 	{
 		title: 'How do I log a game?',
 		content: [
-			'Tap the + button on the dashboard to start a new game. You can enter scores frame-by-frame, or use the built-in camera scanner to capture a paper scorecard. Games are saved automatically and roll up into your stats.',
+			'Tap the + button on the dashboard to start a new game. Enter your scores frame-by-frame as you bowl. Games are saved automatically and roll up into your stats.',
 		],
 	},
 	{

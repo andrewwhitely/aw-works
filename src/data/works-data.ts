@@ -258,7 +258,7 @@ export const projects: Project[] = [
 			'I built it because I wanted something that felt like it belonged on iOS, not a ported web app. Everything from session logging to stats charts is native SwiftUI on iOS 18.',
 		],
 		features: [
-			'Log games frame-by-frame or scan a paper scorecard with the built-in camera scanner',
+			'Log games frame-by-frame with fast, accurate manual score entry',
 			'Dashboard with rolling average, high game, strike rate, spare rate, and current handicap',
 			'Session mode for tracking multi-game sets at a single sitting',
 			'Handicap calculator supporting USBC formula and custom percentage and base score',
