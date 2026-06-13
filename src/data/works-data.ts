@@ -167,7 +167,7 @@ export const projects: Project[] = [
 		about: [
 			'SportFinder answers the question every casual fan eventually asks: "I like the Lakers — what else should I watch?" You mark the teams you already follow, and the recommendation engine surfaces new ones across sports based on your taste profile.',
 			'The engine scores candidates against your fingerprint across multiple dimensions — team aesthetic and color palette, narrative and story arcs, entry ease for new fans, current form, watchability, and geography. Cross-sport recommendations are a first-class feature, not an afterthought.',
-			"The app lives entirely in the browser with no account required. Your selections are saved locally and can be shared via a URL. The backend is a Cloudflare Worker serving a static team catalog and the recommendation API.",
+			'The app lives entirely in the browser with no account required. Your selections are saved locally and can be shared via a URL. The backend is a Cloudflare Worker serving a static team catalog and the recommendation API.',
 		],
 		features: [
 			'Team browser covering NFL, NBA, MLB, NHL, Formula 1, top soccer leagues, tennis, and golf',
@@ -270,7 +270,7 @@ export const projects: Project[] = [
 			{ label: 'Type', value: 'iOS App' },
 			{ label: 'Role', value: 'Design + Development' },
 			{ label: 'Year', value: '2026' },
-			{ label: 'Status', value: 'In Development' },
+			{ label: 'Status', value: 'Live!' },
 		],
 		privacy: [
 			{ label: 'Support →', href: '/works/pins/support' },
