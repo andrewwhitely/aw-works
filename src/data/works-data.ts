@@ -18,72 +18,72 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-	{
-		slug: 'lunchbox-studio',
-		title: 'Lunchbox Studio',
-		category: 'web',
-		year: 2024,
-		description:
-			'A techology-first, creative design and development studio.',
-		tags: ['Studio', 'Design', 'Development'],
-		links: [{ label: 'Visit →', href: 'https://lunchbox.studio' }],
-		about: [
-			'Lunchbox Studio is an independent design and development studio I founded to take on creative endeavors — building beautiful and engaging digital experiences for the people.',
-		],
-		capabilities: [
-			{
-				Product: [
-					'Research',
-					'Strategy',
-					'Design',
-					'Development',
-					'Copywriting',
-					'SEO',
-					'User Testing',
-				],
-			},
-			{
-				Branding: [
-					'Identity',
-					'Design Systems',
-					'Photography',
-					'Voice & Tone',
-					'Typography',
-				],
-			},
-			{
-				Digital: [
-					'Responsive Website Design',
-					'User Experience',
-					'User Interface Design',
-					'Digital Experiences',
-					'Architecture',
-				],
-			},
-			{
-				Technology: [
-					'Web Design & Development',
-					'iOS Development',
-					'eCommerce',
-					'Consulting',
-					'Strategy',
-					'Architecture Design',
-					'API Design, Development & Integration',
-					'AI Strategy, Design, & Implementation',
-				],
-			},
-		],
-		notes: [
-			{ label: 'Type', value: 'Studio' },
-			{ label: 'Role', value: 'Founder' },
-			{ label: 'Year', value: '2024' },
-			{
-				label: 'Status',
-				value: 'Active',
-				href: 'https://lunchbox.studio',
-			},
-		],
-	},
+	// {
+	// 	slug: 'lunchbox-studio',
+	// 	title: 'Lunchbox Studio',
+	// 	category: 'web',
+	// 	year: 2024,
+	// 	description:
+	// 		'A techology-first, creative design and development studio.',
+	// 	tags: ['Studio', 'Design', 'Development'],
+	// 	links: [{ label: 'Visit →', href: 'https://lunchbox.studio' }],
+	// 	about: [
+	// 		'Lunchbox Studio is an independent design and development studio I founded to take on creative endeavors — building beautiful and engaging digital experiences for the people.',
+	// 	],
+	// 	capabilities: [
+	// 		{
+	// 			Product: [
+	// 				'Research',
+	// 				'Strategy',
+	// 				'Design',
+	// 				'Development',
+	// 				'Copywriting',
+	// 				'SEO',
+	// 				'User Testing',
+	// 			],
+	// 		},
+	// 		{
+	// 			Branding: [
+	// 				'Identity',
+	// 				'Design Systems',
+	// 				'Photography',
+	// 				'Voice & Tone',
+	// 				'Typography',
+	// 			],
+	// 		},
+	// 		{
+	// 			Digital: [
+	// 				'Responsive Website Design',
+	// 				'User Experience',
+	// 				'User Interface Design',
+	// 				'Digital Experiences',
+	// 				'Architecture',
+	// 			],
+	// 		},
+	// 		{
+	// 			Technology: [
+	// 				'Web Design & Development',
+	// 				'iOS Development',
+	// 				'eCommerce',
+	// 				'Consulting',
+	// 				'Strategy',
+	// 				'Architecture Design',
+	// 				'API Design, Development & Integration',
+	// 				'AI Strategy, Design, & Implementation',
+	// 			],
+	// 		},
+	// 	],
+	// 	notes: [
+	// 		{ label: 'Type', value: 'Studio' },
+	// 		{ label: 'Role', value: 'Founder' },
+	// 		{ label: 'Year', value: '2024' },
+	// 		{
+	// 			label: 'Status',
+	// 			value: 'Active',
+	// 			href: 'https://lunchbox.studio',
+	// 		},
+	// 	],
+	// },
 	{
 		slug: 'stash',
 		title: 'Stash',
