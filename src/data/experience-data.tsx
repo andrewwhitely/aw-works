@@ -46,14 +46,14 @@ export const Jobs: Role[] = [
 		current: false,
 		role: 'Software Engineer',
 	},
-	// {
-	// 	title: 'Lunchbox Studio',
-	// 	url: 'https://lunchbox.studio',
-	// 	start: 2024,
-	// 	locked: false,
-	// 	current: true,
-	// 	role: 'Founder',
-	// },
+	{
+		title: 'Lunchbox Studio',
+		url: 'https://lunchbox.studio',
+		start: 2024,
+		locked: false,
+		current: true,
+		role: 'Founder',
+	},
 ];
 
 export const Projects: Role[] = [];

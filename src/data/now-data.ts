@@ -22,24 +22,28 @@ export const nowData = {
 			href: 'https://www.goodreads.com/book/show/49247242-ring-shout',
 		},
 		{
-			value: 'One Piece by Eiichiro Oda',
-			href: 'https://en.wikipedia.org/wiki/One_Piece',
+			value: 'Chain-Gang All-Stars by Nana Kwame Adjei-Brenyah',
+			href: 'https://www.goodreads.com/en/book/show/61190770-chain-gang-all-stars',
 		},
 	],
 	listening: [
 		{
-			value: 'The Will of the Many by James Islington',
-			href: 'https://www.goodreads.com/book/show/58416952-the-will-of-the-manys',
+			value: 'Golden Son by Pierce Brown',
+			href: 'https://www.goodreads.com/book/show/18966819-golden-son',
+		},
+		{
+			value: `The Butcher's Masquerade by Matt Dinniman`,
+			href: 'https://www.goodreads.com/book/show/220772913-the-butcher-s-masquerade',
 		},
 	],
 	watching: [
 		{
-			value: 'A Knight of the Seven Kingdoms',
-			href: 'https://en.wikipedia.org/wiki/A_Knight_of_the_Seven_Kingdoms_(TV_series)',
+			value: 'Industry',
+			href: 'https://en.wikipedia.org/wiki/Industry_(TV_series)',
 		},
 		{
-			value: 'Yellowjackets',
-			href: 'https://en.wikipedia.org/wiki/Yellowjackets_(TV_series)',
+			value: 'The Bear',
+			href: 'https://en.wikipedia.org/wiki/The_Bear_(TV_series)',
 		},
 	],
 };
