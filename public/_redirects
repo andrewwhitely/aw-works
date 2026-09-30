@@ -1,2 +1,6 @@
-/v2/*  https://REPLACE-WITH-YOUR-V2-PROJECT.pages.dev/:splat  200
+# TODO: once the v2 Pages project exists, uncomment and replace with its real
+# *.pages.dev URL. Left active with a placeholder hostname, this proxy rule
+# would be a subdomain-takeover risk: whoever claims that exact pages.dev name
+# would get served under aw.works/v2 with the URL bar still showing aw.works.
+# /v2/*  https://REPLACE-WITH-YOUR-V2-PROJECT.pages.dev/:splat  200
 /*  /index.html  200
