@@ -4,10 +4,11 @@ import globals from 'globals';
 
 export default tseslint.config(
 	{
-		ignores: ['dist/**', 'node_modules/**'],
+		ignores: ['dist/**', 'node_modules/**', 'v2/**', '.claude/**', '.wrangler/**'],
 	},
 	{
 		files: ['**/*.{js,jsx,ts,tsx}'],
+		plugins: { '@typescript-eslint': tseslint.plugin },
 		languageOptions: {
 			parser: tseslint.parser,
 			globals: {
