@@ -12,6 +12,8 @@ on:
 
 jobs:
   claude-review:
+    # Dependabot PRs are bots (the action rejects them) and are gated by CI instead.
+    if: github.actor != 'dependabot[bot]'
     # Optional: Filter by PR author
     # if: |
     #   github.event.pull_request.user.login == 'external-contributor' ||
