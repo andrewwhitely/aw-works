@@ -1,0 +1,201 @@
+{
+	"pins-privacy": {
+		"app": "Pins",
+		"kind": "privacy",
+		"title": "Privacy Policy",
+		"effectiveDate": "June 5, 2026",
+		"backHref": "/works/pins",
+		"backLabel": "Pins",
+		"description": "Privacy Policy for Pins, the bowling scorecard and stats tracker for iOS.",
+		"sections": [
+			{
+				"title": "Overview",
+				"content": [
+					"Pins is a bowling scorecard and stats tracker for iOS, built and operated by Andrew Whitely. This Privacy Policy explains what information Pins handles, how it is used, and your rights regarding that information.",
+					"By using Pins, you agree to the practices described in this policy."
+				]
+			},
+			{
+				"title": "Information We Collect",
+				"content": [
+					"Pins does not require an account and does not collect personal information about you. The app is designed to keep your data on your device."
+				],
+				"items": [
+					"Bowling data — games, scores, sessions, stats, handicap settings, equipment, and notes you enter manually."
+				]
+			},
+			{
+				"title": "How Your Information Is Used",
+				"items": [
+					"To record your games and calculate stats such as rolling average, high game, strike rate, spare rate, and handicap.",
+					"To group games into sessions and display trends over time.",
+					"To manage your equipment, session presets, and oil pattern references."
+				]
+			},
+			{
+				"title": "Data Storage & Security",
+				"content": [
+					"Pins does not require an account or sign-up. Your data is stored on your device and, when iCloud is enabled, synced across your devices through your private iCloud account using Apple's CloudKit. This data lives in your personal iCloud and is governed by Apple's privacy policy. Pins does not operate its own servers and cannot access your iCloud data.",
+					"You can delete your data at any time from within the app. Deleting the app also removes its local data from that device."
+				]
+			},
+			{
+				"title": "Third-Party Services",
+				"content": [
+					"Pins does not sell, rent, or share your personal information with third parties. The app does not include third-party advertising or analytics SDKs that track you."
+				]
+			},
+			{
+				"title": "Your Rights",
+				"items": [
+					"Access — all of your data is viewable within the app.",
+					"Correction — you can edit or delete any game, session, or equipment entry at any time.",
+					"Deletion — you can delete your data from within the app at any time, and deleting the app removes its local data from that device."
+				]
+			},
+			{
+				"title": "Children's Privacy",
+				"content": [
+					"Pins is not directed at children under the age of 13 and does not knowingly collect personal information from children under 13."
+				]
+			},
+			{
+				"title": "Changes to This Policy",
+				"content": [
+					"We may update this Privacy Policy from time to time. When we do, we will update the effective date at the top of this page. Continued use of Pins after changes constitutes acceptance of the updated policy."
+				]
+			},
+			{
+				"title": "Contact",
+				"content": [
+					"If you have any questions about this Privacy Policy or how your data is handled, please reach out at andrewnwhitely@gmail.com."
+				]
+			}
+		]
+	},
+	"pins-support": {
+		"app": "Pins",
+		"kind": "support",
+		"title": "Support",
+		"subtitle": "Pins — bowling scorecard & stats tracker for iOS",
+		"backHref": "/works/pins",
+		"backLabel": "Pins",
+		"description": "Support and help for Pins, the bowling scorecard and stats tracker for iOS.",
+		"contactEmail": "andrewnwhitely@gmail.com",
+		"contactSubject": "Pins Support",
+		"faqs": [
+			{
+				"title": "How do I log a game?",
+				"content": [
+					"Tap the + button on the dashboard to start a new game. Enter your scores frame-by-frame as you bowl. Games are saved automatically and roll up into your stats."
+				]
+			},
+			{
+				"title": "How is my handicap calculated?",
+				"content": [
+					"Pins supports the standard USBC formula as well as a custom percentage and base score. Set your preference in Settings → Handicap. Your handicap updates automatically as you log new games."
+				]
+			},
+			{
+				"title": "What is Session mode?",
+				"content": [
+					"Session mode lets you track a multi-game set in a single sitting — for example a three-game league night. Start a session, log each game within it, and Pins keeps the set grouped together with its own averages and trends."
+				]
+			},
+			{
+				"title": "Can I track my equipment?",
+				"content": [
+					"Yes. The equipment tracker lets you catalog the balls in your bag with per-ball notes. You can also build session presets and reference the oil pattern library to set up sessions quickly."
+				]
+			},
+			{
+				"title": "Where is my data stored?",
+				"content": [
+					"Your data lives on your device. Pins is built natively in SwiftUI for iOS 18 and is designed to keep your records private to you."
+				]
+			}
+		]
+	},
+	"stash-privacy": {
+		"app": "Stash",
+		"kind": "privacy",
+		"title": "Privacy Policy",
+		"effectiveDate": "May 21, 2026",
+		"backHref": "/works/stash",
+		"backLabel": "Stash",
+		"description": "Privacy Policy for the Stash wishlist tracking app.",
+		"sections": [
+			{
+				"title": "Overview",
+				"content": [
+					"Stash is a personal wishlist tracker built and operated by Andrew Whitely. This Privacy Policy explains what information is collected when you use Stash, how it is used, and your rights regarding that information.",
+					"By using Stash, you agree to the practices described in this policy."
+				]
+			},
+			{
+				"title": "Information We Collect",
+				"items": [
+					"Account information — email address and password when you create an account.",
+					"Wishlist data — items you add, including product names, URLs, prices, notes, and categories.",
+					"Usage data — basic app interactions used to improve the experience (e.g. features used, errors encountered).",
+					"Device information — device type, OS version, and app version for debugging and compatibility."
+				]
+			},
+			{
+				"title": "How We Use Your Information",
+				"items": [
+					"To provide and maintain the Stash service across your devices.",
+					"To sync your wishlist data between iOS and desktop.",
+					"To display price history and purchase tracking for your items.",
+					"To improve the app based on usage patterns and bug reports.",
+					"To communicate important updates about the service."
+				]
+			},
+			{
+				"title": "Data Storage & Security",
+				"content": [
+					"Your data is stored securely and is only accessible to your account. We use industry-standard encryption for data in transit and at rest. We do not sell, rent, or share your personal information with third parties for marketing purposes."
+				]
+			},
+			{
+				"title": "Third-Party Services",
+				"content": [
+					"Stash may use third-party services for authentication, data storage, and analytics. These services have their own privacy policies and only receive the minimum data necessary to function. We do not share your wishlist data with advertisers or data brokers."
+				]
+			},
+			{
+				"title": "Data Retention",
+				"content": [
+					"Your data is retained for as long as your account is active. You may delete your account at any time from the app settings, which will permanently remove all associated data within 30 days."
+				]
+			},
+			{
+				"title": "Your Rights",
+				"items": [
+					"Access — you can view all data associated with your account in the app.",
+					"Correction — you can edit or update your information at any time.",
+					"Deletion — you can delete your account and all associated data.",
+					"Export — you can request a copy of your data by contacting us."
+				]
+			},
+			{
+				"title": "Children's Privacy",
+				"content": [
+					"Stash is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us and we will delete it."
+				]
+			},
+			{
+				"title": "Changes to This Policy",
+				"content": [
+					"We may update this Privacy Policy from time to time. When we do, we will update the effective date at the top of this page. Continued use of Stash after changes constitutes acceptance of the updated policy."
+				]
+			},
+			{
+				"title": "Contact",
+				"content": [
+					"If you have any questions about this Privacy Policy or how your data is handled, please reach out at andrewnwhitely@gmail.com."
+				]
+			}
+		]
+	}
+}

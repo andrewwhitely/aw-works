@@ -1,0 +1,28 @@
+{
+	"reading": [
+	],
+	"listening": [
+		{
+			"value": "The Knight and the Moth by Rachel Gillig",
+			"href": "https://www.goodreads.com/book/show/205335957-the-knight-and-the-moth"
+		},
+		{
+			"value": "Morning Star by Pierce Brown",
+			"href": "https://www.goodreads.com/book/show/18966806-morning-star"
+		},
+		{
+			"value": "The Butcher's Masquerade by Matt Dinniman",
+			"href": "https://www.goodreads.com/book/show/220772913-the-butcher-s-masquerade"
+		}
+	],
+	"watching": [
+		{
+			"value": "Outer Banks",
+			"href": "https://en.wikipedia.org/wiki/Outer_Banks_(TV_series)"
+		},
+		{
+			"value": "Minnesota Vikings (3-0)",
+			"href": "https://www.espn.com/nfl/team/_/name/min/minnesota-vikings"
+		}
+	]
+}
