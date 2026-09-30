@@ -39,7 +39,7 @@
 		"rehype-slug": "^6.0.0",
 		"remark-frontmatter": "^5.0.0",
 		"remark-math": "^6.0.0",
-		"remark-mdx-frontmatter": "^4.0.0",
+		"remark-mdx-frontmatter": "^6.0.0",
 		"sugar-high": "^0.7.0",
 		"tailwind-merge": "^2.5.4"
 	},
